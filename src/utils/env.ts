@@ -1,1 +1,5 @@
-export const DATABASE_URL = "mongodb+srv://db-acara:admin#1234@ticket-course.d3gbd.mongodb.net/?retryWrites=true&w=majority&appName=ticket-course";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+export const DATABASE_URL: string = process.env.DATABASE_URL || '';
