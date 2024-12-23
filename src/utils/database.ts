@@ -3,10 +3,8 @@ import { DATABASE_URL } from './env';
 
 const connect = async () => {
   try {
-    await mongoose.connect(DATABASE_URL, {
-      dbName: 'db-acara',
-    });
-
+    await mongoose.connect(DATABASE_URL);
+    console.log('database connected');
     return Promise.resolve('database connected');
   } catch (error) {
     return Promise.reject(error);

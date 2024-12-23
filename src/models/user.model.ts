@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
+// const { v4: uuidv4 } = require("uuid");
 
 export interface User {
+  // id: string;
   fullName: string;
   username: string;
   email: string;
@@ -15,6 +17,12 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema<User>(
   {
+    // id: {
+    //   type: Schema.Types.String,
+    //   required: true,
+    //   unique: true,
+    //   default: uuidv4(),
+    // },
     fullName: {
       type: Schema.Types.String,
       required: true,
@@ -46,6 +54,7 @@ const UserSchema = new Schema<User>(
     },
     activationCode: {
       type: Schema.Types.String,
+      default: '',
     },
   },
   {
